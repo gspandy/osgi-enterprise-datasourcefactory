@@ -8,19 +8,23 @@ import org.osgi.service.jdbc.DataSourceFactory;
 
 public class MySqlDataSourceFactoryActivator implements BundleActivator {
 
-	public void start(BundleContext context) throws Exception {
+	public static final String JDBC_DRIVER_CLASS = "com.mysql.jdbc.Driver";
+	public static final String JDBC_DRIVER_VERSION = "5.1.19";
+	public static final String JDBC_DRIVER_NAME = "com.mysql.jdbc.Driver";
+
+	public void start(BundleContext bundleContext) throws Exception {
 		Hashtable<String, String> props = new Hashtable<String, String>();
 		MySqlDataSourceFactory factory = new MySqlDataSourceFactory();
-		
-		props.put(DataSourceFactory.OSGI_JDBC_DRIVER_CLASS, "com.mysql.jdbc.Driver");
-		props.put(DataSourceFactory.OSGI_JDBC_DRIVER_VERSION, "5.1.19"); // sync with mysql/connectorj version?
-		props.put(DataSourceFactory.OSGI_JDBC_DRIVER_NAME, "com.mysql.jdbc.Driver");
-        context.registerService(DataSourceFactory.class.getName(), factory, props);
+
+		props.put(DataSourceFactory.OSGI_JDBC_DRIVER_CLASS, JDBC_DRIVER_CLASS);
+		props.put(DataSourceFactory.OSGI_JDBC_DRIVER_VERSION, JDBC_DRIVER_VERSION);
+		props.put(DataSourceFactory.OSGI_JDBC_DRIVER_NAME, JDBC_DRIVER_NAME);
+
+		bundleContext.registerService(DataSourceFactory.class.getName(), factory, props);
 	}
-	
-	public void stop(BundleContext context) throws Exception {
-		// TODO Auto-generated method stub
-		
+
+	public void stop(BundleContext bundleContext) throws Exception {
+		// DO NOTHING HERE
 	}
 
 }

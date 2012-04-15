@@ -15,28 +15,25 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 public class MySqlDataSourceFactory implements DataSourceFactory {
 
 	public DataSource createDataSource(Properties props) throws SQLException {
-		MysqlDataSource dataSource = new MysqlDataSource();
-		dataSource.setURL(props.getProperty(DataSourceFactory.JDBC_URL));
-		dataSource.setUser(props.getProperty(DataSourceFactory.JDBC_USER));
-		dataSource.setPassword(props.getProperty(DataSourceFactory.JDBC_PASSWORD));
-		return dataSource;
+		MysqlDataSource ds = new MysqlDataSource();
+		ds.setURL(props.getProperty(DataSourceFactory.JDBC_URL));
+		ds.setUser(props.getProperty(DataSourceFactory.JDBC_USER));
+		ds.setPassword(props.getProperty(DataSourceFactory.JDBC_PASSWORD));
+		return ds;
 	}
 
 	public ConnectionPoolDataSource createConnectionPoolDataSource(
 			Properties props) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new IllegalStateException("Not implemented yet");
 	}
 
 	public XADataSource createXADataSource(Properties props)
 			throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new IllegalStateException("Not implemented yet");
 	}
 
 	public Driver createDriver(Properties props) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new IllegalStateException("Not implemented yet");
 	}
 
 }
