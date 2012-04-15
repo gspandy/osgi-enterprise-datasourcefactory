@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>datasourcefactory</artifactId>
+		<groupId>org.danielsoft.osgi.enterprise</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>datasourcefactory-runner</artifactId>
+	<packaging>pom</packaging>
+	<name>DataSourceFactory - OSGi Framework(s) Runner</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.enterprise</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.danielsoft.osgi.enterprise</groupId>
+			<artifactId>datasourcefactory-mysql</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.danielsoft.osgi.enterprise</groupId>
+			<artifactId>datasourcefactory-mysql-sample</artifactId>
+		</dependency>
+	</dependencies>
+</project>
